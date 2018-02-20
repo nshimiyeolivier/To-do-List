@@ -149,6 +149,10 @@ min-height: 100px;
  border-radius: 2px;
 }
 
+.bouton_submit1 {
+visibility: hidden;
+}
+
 .centre{
   /* centrer horizontalement */
   align-items: center;

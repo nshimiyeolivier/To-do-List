@@ -26,14 +26,14 @@ if (isset($_POST["submit-modif"])){
   $myObj["aFaire"] = array_values($myObj["aFaire"]);
 }
 
+// exporte le tableau php en json
   $finalAjout = json_encode($myObj);
   file_put_contents('todo2.json', $finalAjout);
-
-
 
 ?>
 
 <?php
+/* Récupération du contenu du fichier .json */
 $file = file_get_contents("todo2.json");
 $myObj = json_decode($file, true);
 
@@ -42,9 +42,15 @@ if (isset($_POST["reinitialiser"])){
   $myObj['archive'] =array();
 }
 
-
 $finalAjout = json_encode($myObj);
 file_put_contents('todo2.json', $finalAjout);
+
+// CACHER LE BOUTON ENREGISTRER QUAND IL N Y A PLUS DE TACHE
+if(count($myObj['aFaire']) > 0){
+  $bouton_submit = "bouton_submit";
+} else {
+  $bouton_submit= "bouton_submit1";
+}
 
 // print_r($myObj['archive']);
  ?>
@@ -87,7 +93,8 @@ file_put_contents('todo2.json', $finalAjout);
               </div>
 
 
-          <input type="submit" name="submit-modif" class="bouton_submit" value="Enregistrer"/>
+          <input type="submit" name="submit-modif" class="<?php echo $bouton_submit?>" value="Enregistre"/>
+
           <!--AFFICHE ARCHIVE  -->
           <h5> ARCHIVE:</h5>
         <div class="done">
@@ -101,6 +108,7 @@ file_put_contents('todo2.json', $finalAjout);
             ?>
           </span>
           <br />
+
           <input type="submit" name="reinitialiser" class="reinitialiser" value="! REINITIALISER"/>
       </div>
         </form>
@@ -139,6 +147,16 @@ file_put_contents('todo2.json', $finalAjout);
     </div>
     <div class="row">
     </div>
+
+<!-- TEST -->
+    <div class="item">
+      <a href="https://tutorialzine.com/?p=<?php echo $t['id']?>">
+          <img src="https://tutorialzine.com/misc/featured/<?php echo $t['id']?>.jpg" title="<?php echo $t['title']?>" alt="<?php echo $t['title']?>" width="620" height="340" />
+        </a>
+        <div class="delete"></div>
+    </div>
+
+<!--TEST  -->
     <footer>
       <h2>Olivier & Jean Luc :D, BeCode.org</h2>
     </footer>
@@ -153,5 +171,6 @@ file_put_contents('todo2.json', $finalAjout);
       }
       });
 </script>
+<script src="js/script.js"></script>
   </body>
 </html>

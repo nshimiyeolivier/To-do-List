@@ -52,6 +52,13 @@ if(count($myObj['aFaire']) > 0){
   $bouton_submit= "bouton_submit1";
 }
 
+// CACHER LE BOUTON !REINITIALISER QUAND IL N Y A PLUS DE TACHE
+if(count($myObj['archive']) > 0){
+  $bouton_reinitialiser = "reinitialiser";
+} else {
+  $bouton_reinitialiser = "reinitialiser1";
+}
+
 // print_r($myObj['archive']);
  ?>
 
@@ -109,7 +116,7 @@ if(count($myObj['aFaire']) > 0){
           </span>
           <br />
 
-          <input type="submit" name="reinitialiser" class="reinitialiser" value="! REINITIALISER"/>
+          <input type="submit" name="reinitialiser" class="<?php echo $bouton_reinitialiser ?>" value="! REINITIALISER"/>
       </div>
         </form>
       </div>
@@ -148,15 +155,6 @@ if(count($myObj['aFaire']) > 0){
     <div class="row">
     </div>
 
-<!-- TEST -->
-    <div class="item">
-      <a href="https://tutorialzine.com/?p=<?php echo $t['id']?>">
-          <img src="https://tutorialzine.com/misc/featured/<?php echo $t['id']?>.jpg" title="<?php echo $t['title']?>" alt="<?php echo $t['title']?>" width="620" height="340" />
-        </a>
-        <div class="delete"></div>
-    </div>
-
-<!--TEST  -->
     <footer>
       <h2>Olivier & Jean Luc :D, BeCode.org</h2>
     </footer>

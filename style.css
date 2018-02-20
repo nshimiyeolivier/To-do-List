@@ -114,14 +114,6 @@ button{
   border-radius: 50%;
 }
 
-.reinitialiser {
-  background-color: #DDDDDD;
-  color: red;
-  padding:4px;
-  border:1px solid black;
-  border-radius: 10px;
-  font-weight: bold;
-}
 
 .done{
 min-height: 100px;
@@ -152,6 +144,23 @@ min-height: 100px;
 .bouton_submit1 {
 visibility: hidden;
 }
+
+.reinitialiser {
+  background-color: #DDDDDD;
+  color: red;
+  padding:4px;
+  border:1px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.reinitialiser1 {
+visibility: hidden;
+}
+
+
+
+
 
 .centre{
   /* centrer horizontalement */

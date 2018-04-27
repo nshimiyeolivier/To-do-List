@@ -80,9 +80,8 @@ header, footer{
 .col_75 {
   width: 75%;
   padding: 10px;
-
-
 }
+
 .col_fin {
   display: -webkit-box;
   display: -moz-box;
@@ -159,9 +158,6 @@ visibility: hidden;
 }
 
 
-
-
-
 .centre{
   /* centrer horizontalement */
   align-items: center;
@@ -176,3 +172,5 @@ visibility: hidden;
   }
 
 }
+
+/* ********* */
